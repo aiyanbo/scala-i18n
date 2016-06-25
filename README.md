@@ -1,6 +1,8 @@
 Scala i18n
 ==================
 
+[![Build Status](https://travis-ci.org/aiyanbo/scala-i18n.svg?branch=master)](https://travis-ci.org/aiyanbo/scala-i18n)
+
 #Synopsis
 
 ```scala
