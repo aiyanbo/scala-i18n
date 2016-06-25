@@ -4,7 +4,8 @@ Scala i18n
 #Synopsis
 
 ```scala
-  val messages = Messages(locale = Locale.CHINA)
+  val messages = Messages()
+  implicit val locale = Locale.CHINA
   messages.format("hello", "Andy Ai")
 ```
 
