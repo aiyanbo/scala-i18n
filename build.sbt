@@ -1,10 +1,10 @@
 import Dependencies._
 
-name := "sbt-simple-project"
+name := "scala-i18n"
 
-version := "1.0.0-SNAPSHOT"
+version := "1.0.0"
 
-organization := "com.your.company"
+organization := "org.jmotor"
 
 scalaVersion := Versions.scala
 
