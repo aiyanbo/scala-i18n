@@ -21,6 +21,10 @@ class Messages(name: String, suffix: String) {
 
   def format(message: String, args: Any*)(implicit locale: Locale): String = {
     val bundle = ResourceBundle.getBundle(name, locale, new UTF8Control(suffix))
-    new MessageFormat(bundle.getString(message), locale).format(args.map(_.asInstanceOf[java.lang.Object]).toArray)
+    if (args.nonEmpty) {
+      new MessageFormat(bundle.getString(message), locale).format(args.map(_.asInstanceOf[java.lang.Object]).toArray)
+    } else {
+      bundle.getString(message)
+    }
   }
 }
