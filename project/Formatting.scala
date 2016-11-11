@@ -2,18 +2,19 @@ import com.typesafe.sbt.SbtScalariform
 import com.typesafe.sbt.SbtScalariform.ScalariformKeys
 import sbt._
 
-object Formatting {
-  lazy val formatSettings = SbtScalariform.scalariformSettings ++ Seq(
-    ScalariformKeys.preferences in Compile := formattingPreferences,
-    ScalariformKeys.preferences in Test := formattingPreferences
-  )
+import scalariform.formatter.preferences.FormattingPreferences
 
-  lazy val docFormatSettings = SbtScalariform.scalariformSettings ++ Seq(
-    ScalariformKeys.preferences in Compile := docFormattingPreferences,
-    ScalariformKeys.preferences in Test := docFormattingPreferences
-  )
+object Formatting extends AutoPlugin {
 
-  def formattingPreferences = {
+  override def trigger: PluginTrigger = allRequirements
+
+  override def projectSettings: Seq[_root_.sbt.Def.Setting[_]] =
+    SbtScalariform.scalariformSettings ++ Seq(
+      ScalariformKeys.preferences in Compile := formattingPreferences,
+      ScalariformKeys.preferences in Test := formattingPreferences
+    )
+
+  def formattingPreferences: FormattingPreferences = {
     import scalariform.formatter.preferences._
     FormattingPreferences()
       .setPreference(RewriteArrowSymbols, true)
@@ -21,7 +22,7 @@ object Formatting {
       .setPreference(AlignSingleLineCaseStatements, true)
   }
 
-  def docFormattingPreferences = {
+  def docFormattingPreferences: FormattingPreferences = {
     import scalariform.formatter.preferences._
     FormattingPreferences()
       .setPreference(RewriteArrowSymbols, false)
