@@ -2,7 +2,7 @@ import Dependencies._
 
 name := "scala-i18n"
 
-version := "1.0.2"
+version := "1.0.3"
 
 organization := "org.jmotor"
 
