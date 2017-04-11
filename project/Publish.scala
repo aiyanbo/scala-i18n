@@ -1,6 +1,5 @@
 import sbt.Keys._
-import sbt._
-import sbt.{AutoPlugin, Credentials, Path, PluginTrigger}
+import sbt.{AutoPlugin, Credentials, Path, PluginTrigger, _}
 
 object Publish extends AutoPlugin {
 
