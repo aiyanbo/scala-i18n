@@ -3,22 +3,19 @@ import sbt._
 object Dependencies {
 
   object Versions {
+    val scala212 = "2.12.6"
     val scala211 = "2.11.8"
-    val scala212 = "2.12.1"
-    val scalaTest = "3.0.1"
-    val scalaLogging = "3.5.0"
+    val scalatest = "3.0.5"
   }
 
   object Compile {
-    val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % Versions.scalaLogging
   }
 
   object Test {
-    val scalaTest = "org.scalatest" %% "scalatest" % Versions.scalaTest % "test"
+    val scalaTest = "org.scalatest" %% "scalatest" % Versions.scalatest % "test"
   }
 
-  import Compile._
 
-  lazy val dependencies = Seq(scalaLogging, Test.scalaTest)
+  lazy val dependencies = Seq(Test.scalaTest)
 
 }

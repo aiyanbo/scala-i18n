@@ -1,9 +1,11 @@
 package org.jmotor.i18n
 
 import java.text.MessageFormat
-import java.util.{Locale, ResourceBundle}
+import java.util.{ Locale, ResourceBundle }
 
 import org.jmotor.i18n.control.UTF8Control
+
+import scala.util.control.NonFatal
 
 /**
  * Component:
@@ -19,12 +21,17 @@ object Messages {
 
 class Messages(name: String, suffix: String) {
 
-  def format(message: String, args: Any*)(implicit locale: Locale): String = {
+  def format(key: String, args: Any*)(implicit locale: Locale): String = {
     val bundle = ResourceBundle.getBundle(name, locale, new UTF8Control(suffix))
-    if (args.nonEmpty) {
-      new MessageFormat(bundle.getString(message), locale).format(args.map(_.asInstanceOf[java.lang.Object]).toArray)
-    } else {
-      bundle.getString(message)
+    try {
+      val message = bundle.getString(key)
+      if (args.nonEmpty) {
+        new MessageFormat(message, locale).format(args.map(_.asInstanceOf[java.lang.Object]).toArray)
+      } else {
+        message
+      }
+    } catch {
+      case _: java.util.MissingResourceException ⇒ key
     }
   }
 }

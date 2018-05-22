@@ -1,9 +1,9 @@
 package org.jmotor.i18n.control
 
 import java.io.InputStreamReader
-import java.net.{URL, URLConnection}
+import java.net.{ URL, URLConnection }
 import java.util.ResourceBundle.Control
-import java.util.{Locale, PropertyResourceBundle, ResourceBundle}
+import java.util.{ Locale, PropertyResourceBundle, ResourceBundle }
 
 /**
  * Component:
