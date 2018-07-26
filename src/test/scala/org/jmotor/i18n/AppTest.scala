@@ -25,4 +25,11 @@ class AppTest extends FunSuite with Matchers {
     implicit val locale: Locale = Locale.US
     assert("not-found-key" == messages.format("not-found-key"))
   }
+
+  test("get key") {
+    val messages = Messages()
+    val key = "name"
+    assert(messages.getKey("名字")(Locale.CHINA).contains(key))
+    assert(messages.getKey("Name")(Locale.US).contains(key))
+  }
 }

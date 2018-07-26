@@ -5,7 +5,7 @@ import java.util.{ Locale, ResourceBundle }
 
 import org.jmotor.i18n.control.UTF8Control
 
-import scala.util.control.NonFatal
+import scala.collection.JavaConverters._
 
 /**
  * Component:
@@ -34,4 +34,10 @@ class Messages(name: String, suffix: String) {
       case _: java.util.MissingResourceException ⇒ key
     }
   }
+
+  def getKey(value: String)(implicit locale: Locale): Option[String] = {
+    val bundle = ResourceBundle.getBundle(name, locale, new UTF8Control(suffix))
+    bundle.getKeys.asScala.find(key ⇒ bundle.getString(key) == value)
+  }
+
 }

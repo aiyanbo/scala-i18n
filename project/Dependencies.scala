@@ -15,7 +15,6 @@ object Dependencies {
     val scalaTest = "org.scalatest" %% "scalatest" % Versions.scalatest % "test"
   }
 
-
   lazy val dependencies = Seq(Test.scalaTest)
 
 }
