@@ -35,6 +35,15 @@ class Messages(name: String, suffix: String) {
     }
   }
 
+  def getKeys(implicit locale: Locale): Set[String] = {
+    val bundle = ResourceBundle.getBundle(name, locale, new UTF8Control(suffix))
+    bundle.getKeys.asScala.toSet
+  }
+
+  def contains(key: String)(implicit locale: Locale): Boolean = {
+    getKeys.contains(key)
+  }
+
   def getKey(value: String)(implicit locale: Locale): Option[String] = {
     val bundle = ResourceBundle.getBundle(name, locale, new UTF8Control(suffix))
     bundle.getKeys.asScala.find(key ⇒ bundle.getString(key) == value)

@@ -1,8 +1,7 @@
 import Dependencies._
+import ReleaseTransformations._
 
 name := "scala-i18n"
-
-version := "1.0.5"
 
 organization := "org.jmotor"
 
@@ -20,3 +19,20 @@ dependencyUpgradeModuleNames := Map(
   "scala-library" -> "scala212"
 )
 
+releaseCrossBuild := true
+
+releasePublishArtifactsAction := PgpKeys.publishSigned.value
+
+releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  runClean,
+  runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
+  tagRelease,
+  publishArtifacts,
+  setNextVersion,
+  commitNextVersion,
+  pushChanges
+)

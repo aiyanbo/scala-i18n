@@ -32,4 +32,9 @@ class AppTest extends FunSuite with Matchers {
     assert(messages.getKey("名字")(Locale.CHINA).contains(key))
     assert(messages.getKey("Name")(Locale.US).contains(key))
   }
+
+  test("contains") {
+    val messages = Messages()
+    assert(messages.contains("name")(Locale.CHINA))
+  }
 }
