@@ -5,15 +5,13 @@ name := "scala-i18n"
 
 organization := "org.jmotor"
 
-scalaVersion := Versions.scala212
+scalaVersion := Versions.scala213
 
 libraryDependencies ++= dependencies
 
 enablePlugins(Publish)
 
-enablePlugins(Formatting)
-
-crossScalaVersions := Seq(Versions.scala211, Versions.scala212)
+crossScalaVersions := Seq(Versions.scala211, Versions.scala212, Versions.scala213)
 
 dependencyUpgradeModuleNames := Map(
   "scala-library" -> "scala212"
