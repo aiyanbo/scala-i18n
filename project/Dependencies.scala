@@ -3,10 +3,10 @@ import sbt._
 object Dependencies {
 
   object Versions {
-    val scala212 = "2.12.8"
-    val scala213 = "2.13.0"
-    val scala211 = "2.11.11"
+    val scala213 = "2.13.1"
     val scalatest = "3.0.8"
+    val scala212 = "2.12.10"
+    val scala211 = "2.11.12"
   }
 
   object Compile {
