@@ -49,4 +49,10 @@ class Messages(name: String, suffix: String) {
     bundle.getKeys.asScala.find(key ⇒ bundle.getString(key) == value)
   }
 
+  def searchValues(value: String)(implicit locale: Locale): Set[String] = {
+    val bundle = ResourceBundle.getBundle(name, locale, new UTF8Control(suffix))
+    val keys = bundle.getKeys.asScala.filter(key ⇒ bundle.getString(key).contains(value))
+    keys.map(bundle.getString).toSet
+  }
+
 }
