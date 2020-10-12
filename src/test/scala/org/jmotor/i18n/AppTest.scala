@@ -40,7 +40,7 @@ class AppTest extends FunSuite with Matchers {
 
   test("searchValues") {
     val messages = Messages()
-    val searchResult = messages.searchValues("名")(Locale.CANADA)
+    val searchResult = messages.searchValues("名")(Locale.CHINA)
     assert(searchResult.size == 1 && searchResult.head == "名字")
   }
 }

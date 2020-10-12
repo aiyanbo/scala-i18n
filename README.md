@@ -7,7 +7,7 @@ Scala i18n
 # SBT
 
 ```
-"org.jmotor" %% "scala-i18n" % "1.0.7"
+"org.jmotor" %% "scala-i18n" % "1.0.8"
 ```
 
 # Synopsis
