@@ -1,11 +1,11 @@
 package org.jmotor.i18n
 
-import java.util.Locale
+import org.scalatest.funsuite.AnyFunSuite
 
-import org.scalatest._
+import java.util.Locale
 import scala.collection.JavaConverters._
 
-class AppTest extends FunSuite with Matchers {
+class AppTest extends AnyFunSuite {
 
   test("i18n zh-CN") {
     val messages = Messages()
