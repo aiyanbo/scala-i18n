@@ -1,7 +1,7 @@
 Scala i18n
 ==================
 
-[![Build Status](https://travis-ci.org/aiyanbo/scala-i18n.svg?branch=master)](https://travis-ci.org/aiyanbo/scala-i18n)
+[![Build Status](https://travis-ci.com/aiyanbo/scala-i18n.svg?branch=master)](https://travis-ci.com/aiyanbo/scala-i18n)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jmotor/scala-i18n_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jmotor/scala-i18n_2.12)
 
 # SBT
